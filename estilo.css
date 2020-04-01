@@ -24,6 +24,10 @@ a {
     width: 100%;
     background-color: #fff !important; }
 
-.muda-cor {
-  background-color: #000;
-  transition: 1s; }
+.muda-back {
+  background-color: #000 !important;
+  transition: 1s !important; }
+
+.muda-texto {
+  color: #000 !important;
+  transition: 1s !important; }
