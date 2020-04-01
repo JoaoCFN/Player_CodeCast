@@ -2,23 +2,10 @@
 $padrao: #7159c1;
 $white: #fff;
 $black: #000;
-$dark: rgb(31, 28, 28);
+$dark: rgb(39, 34, 34);
 $azul: rgb(57, 72, 209);
 $verde: rgb(10, 117, 58);
-$amarelo: rgb(228, 18, 18);
-
-// o mixin botao recebe o backgroudn, a cor do texto e o nome do botão e altera seu estilo
-@mixin botao ($back, $color, $botao){
-    .btn-#{$botao}{
-        background-color: $back;
-        color: $color;
-    }
-    .btn-#{$botao}:hover{
-        color: $back;
-        background-color: transparent;
-        border-color: $back;
-    }   
-}
+$vermelho: rgb(228, 18, 18);
 
 body{
     background-color: $padrao;
@@ -30,13 +17,6 @@ body{
 a{
     text-decoration: none;
 }
-
-@include botao($padrao, $white, player);
-@include botao($padrao, $white, azul);
-@include botao($azul, $white, azul);
-@include botao($verde, $white, verde);
-@include botao($amarelo, $white, vermelho);
-
 
 .player{
     .card{
@@ -72,11 +52,58 @@ a{
         
     }  
 }
-.muda-back{
-    background-color: #000 !important;
-    transition: 1s !important;
+
+// o mixin botao recebe o backgroudn, a cor do texto e o nome do botão e altera seu estilo
+@mixin botao ($back, $color, $botao){
+    .btn-#{$botao}{
+        background-color: $back;
+        color: $color;
+    }
+    .btn-#{$botao}:hover{
+        color: $back;
+        background-color: transparent;
+        border-color: $back;
+    }   
 }
-.muda-texto{
-    color: #000 !important;
-    transition: 1s !important;
+
+// botao player padrao
+@include botao($padrao, $white, player);
+// botao dark
+@include botao($black, $white, dark);
+// botao azul
+@include botao($azul, $white, azul);
+// botao verde
+@include botao($verde, $white, verde);
+// botao vermelho
+@include botao($vermelho, $white, vermelho);
+
+// temas
+@mixin tema ($nome_cor, $cor){
+    
+    .#{$nome_cor}-back{
+        background-color: $cor;
+        transition: 1s;
+    }
+    .#{$nome_cor}-texto{
+        color: $cor;
+        transition: 1s;
+    }
 }
+// tema padrão
+@include tema(padrao, $padrao);
+// tema dark
+@include tema(dark, $dark);
+// tema blue
+@include tema(azul, $azul);
+// tema green
+@include tema(verde, $verde);
+// tema vermelha
+@include tema(vermelho, $vermelho);
+
+
+
+
+
+
+
+
