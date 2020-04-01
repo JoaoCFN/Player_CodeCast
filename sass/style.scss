@@ -1,10 +1,27 @@
 //variáveis
-$back: #7159c1;
+$padrao: #7159c1;
 $white: #fff;
+$black: #000;
+$dark: rgb(31, 28, 28);
+$azul: rgb(57, 72, 209);
+$verde: rgb(10, 117, 58);
+$amarelo: rgb(228, 18, 18);
 
+// o mixin botao recebe o backgroudn, a cor do texto e o nome do botão e altera seu estilo
+@mixin botao ($back, $color, $botao){
+    .btn-#{$botao}{
+        background-color: $back;
+        color: $color;
+    }
+    .btn-#{$botao}:hover{
+        color: $back;
+        background-color: transparent;
+        border-color: $back;
+    }   
+}
 
 body{
-    background-color: $back;
+    background-color: $padrao;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -13,6 +30,14 @@ body{
 a{
     text-decoration: none;
 }
+
+@include botao($padrao, $white, player);
+@include botao($padrao, $white, azul);
+@include botao($azul, $white, azul);
+@include botao($verde, $white, verde);
+@include botao($amarelo, $white, vermelho);
+
+
 .player{
     .card{
         margin: 0 auto;
@@ -23,7 +48,7 @@ a{
         #titulo{
             background-color: $white;
             text-align: center;
-            color: $back;
+            color: $padrao;
         } 
         
         .imagem{
@@ -37,10 +62,15 @@ a{
             width: 100%;
             background-color: $white !important;
         }
+
+        .config{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         
-    }
-    
-    
+    }  
 }
 .muda-back{
     background-color: #000 !important;

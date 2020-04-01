@@ -28,11 +28,46 @@
                     <p class="card-text pt-2">Artista</p>
                   </div>
                 
-                  <audio controls class="audio mb-4">
+                  <audio controls class="audio mb-1">
                   </audio>
-                  
+
+                  <div class="config mb-3">
+                    <!-- botão do modal -->
+                    <button type="button" class="btn btn-player btn-lg" data-toggle="modal" data-target="#configs">
+                      <i class="fa fa-cog pr-2"></i>Configurações
+                    </button>
+                </div>
               </div> 
       </section>
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="configs" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Configurações</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="btn-group" role="group" aria-label="Exemplo básico">
+                <button type="button" class="btn btn-player">Padrão</button>
+                <button type="button" class="btn btn-dark">Dark</button>
+                <button type="button" class="btn btn-azul">Blue</button>
+                <button type="button" class="btn btn-verde">Green</button>
+                <button type="button" class="btn btn-vermelho">Yellow</button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-player">Save</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- Optional JavaScript -->
