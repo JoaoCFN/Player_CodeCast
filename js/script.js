@@ -4,7 +4,8 @@ function player(){
     const titulo = document.querySelector("div .card-title");
     const artista = document.querySelector("div .card-text");
     const audio = document.querySelector("audio");
-    const i = 1;
+    // posição dos audios
+    let i = 0;
 
     // objeto inicial
     const data = [
@@ -29,18 +30,39 @@ function player(){
         }
     ];
 
-    // adicionar imagem
-    img.src = data[i].foto;
-    // adicionar texto
-    titulo.innerHTML = `${data[i].titulo}`;
-    artista.innerHTML = `<i class="fa fa-user pr-1"></i> ${data[i].artista}`;
-    // adicionar audio
-    const novo_audio = document.createElement("source");
-    novo_audio.setAttribute("src", data[i].arquivo);
-    audio.appendChild(novo_audio);
+    // atualiza o player após um audio ser finalizado
+    function atualiza_player(){
+        // adicionar imagem
+        img.src = data[i].foto;
+        // adicionar texto
+        titulo.innerHTML = `${data[i].titulo}`;
+        artista.innerHTML = `<i class="fa fa-user pr-1"></i> ${data[i].artista}`;
+        // adicionar audio
+        audio.src = data[i].arquivo;
+    }
 
-    //audio.addEventListener("play", window.alert("par"))
-
+    
+    atualiza_player()
+    
+    // quando o audio for finalizado ele passa para o próximo
+    audio.addEventListener("ended", () => {
+        let limite_audios = data.length - 1;
+        // se i for maior que o limite de audios, ou seja, tocar todos os audios, ele volta ao inicio
+        if(i >= limite_audios){
+            i = 0;
+            console.log(i)
+            console.log(limite_audios)
+            atualiza_player()
+            
+        }
+        // senao, ele segue para o próximo audio
+        else{
+            i += 1;
+            console.log(i)
+            console.log(limite_audios)
+            atualiza_player()    
+        }
+    })
 }
 
 // espera a página carregar para manipular o player
@@ -56,7 +78,7 @@ const player = {
     img :  document.querySelector("img.imagem"),
     titulo :  document.querySelector("div .card-title"),
     artista :  document.querySelector("div .card-text"),
-    audio :  document.querySelector("audio.audio"),
+    audio :  document.querySelector("audio"),
       
     // objeto inicial
     data : [
