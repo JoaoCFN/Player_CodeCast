@@ -1,0 +1,43 @@
+//variáveis
+$back: #7159c1;
+$white: #fff;
+
+
+body{
+    background-color: $back;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+a{
+    text-decoration: none;
+}
+.player{
+    
+    #titulo{
+        background-color: $white;
+        text-align: center;
+        color: $back;
+    } 
+    .card{
+        
+        width: 30rem;
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+
+        .imagem{
+            border-radius: 0 !important;
+            width: 100%;
+
+            //background: url("https://placehold.it/500") no-repeat center center / cover;
+            //height: 250px;
+        }
+        audio{
+            width: 100%;
+            background-color: $white !important;
+        }
+        
+    }
+    
+    
+}
