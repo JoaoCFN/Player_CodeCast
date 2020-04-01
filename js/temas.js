@@ -44,20 +44,22 @@ function muda_tema(){
         })
     }
 }
-function aplica_tema(tema){
-    console.log(`${tema}-back`);        
+function aplica_tema(tema){       
     body.classList.add(`${tema}-back`)
     titulo.classList.add(`${tema}-texto`)
     botao_player.classList.add(`${tema}-back`)
-    boto_modal.classList.add(`${tema}-back`)      
+    botao_player.classList.add(`${tema}-bh`);
+    boto_modal.classList.add(`${tema}-back`);
+    boto_modal.classList.add(`${tema}-bh`);      
 }
 
-function limpa_classe(tema){
-    console.log(`${tema}-back`);        
-    body.classList.remove(`${tema}-back`)
-    titulo.classList.remove(`${tema}-texto`)
+function limpa_classe(tema){     
+    body.classList.remove(`${tema}-back`);
+    titulo.classList.remove(`${tema}-texto`);
     botao_player.classList.remove(`${tema}-back`)
-    boto_modal.classList.remove(`${tema}-back`)   
+    botao_player.classList.remove(`${tema}-bh`);
+    boto_modal.classList.remove(`${tema}-back`);
+    boto_modal.classList.remove(`${tema}-bh`);  
 }
 
 muda_tema();

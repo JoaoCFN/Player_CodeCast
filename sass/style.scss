@@ -4,8 +4,8 @@ $white: #fff;
 $black: #000;
 $dark: rgb(22, 21, 21);
 $azul: rgb(57, 72, 209);
-$verde: rgb(10, 117, 58);
-$vermelho: rgb(228, 18, 18);
+$verde: rgb(31, 66, 47);
+$vermelho: rgb(196, 40, 40);
 
 body{
     background-color: $padrao;
@@ -86,6 +86,11 @@ a{
     }
     .#{$nome_cor}-texto{
         color: $cor !important;
+        transition: 1s;
+    }
+    .#{$nome_cor}-bh:hover{
+        background-color: transparent !important;
+        color: $cor;
         transition: 1s;
     }
 }
