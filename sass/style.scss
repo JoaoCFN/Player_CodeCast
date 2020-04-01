@@ -53,7 +53,7 @@ a{
     }  
 }
 
-// o mixin botao recebe o backgroudn, a cor do texto e o nome do botão e altera seu estilo
+// o mixin botao recebe o background, a cor do texto e o nome do botão e altera seu estilo
 @mixin botao ($back, $color, $botao){
     .btn-#{$botao}{
         background-color: $back;
@@ -79,15 +79,17 @@ a{
 
 // temas
 @mixin tema ($nome_cor, $cor){
-    
+    //background
     .#{$nome_cor}-back{
         background-color: $cor !important;
         transition: 1s;
     }
+    // texto
     .#{$nome_cor}-texto{
         color: $cor !important;
         transition: 1s;
     }
+    // btn hover
     .#{$nome_cor}-bh:hover{
         background-color: transparent !important;
         color: $cor;
