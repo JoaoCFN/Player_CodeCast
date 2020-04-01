@@ -8,14 +8,15 @@ body {
 a {
   text-decoration: none; }
 
-.player #titulo {
-  background-color: #fff;
-  text-align: center;
-  color: #7159c1; }
-
 .player .card {
-  width: 30rem;
+  margin: 0 auto;
+  width: 25rem;
+  max-width: 90%;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12); }
+  .player .card #titulo {
+    background-color: #fff;
+    text-align: center;
+    color: #7159c1; }
   .player .card .imagem {
     border-radius: 0 !important;
     width: 100%; }
