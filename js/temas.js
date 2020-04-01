@@ -4,7 +4,7 @@ let botao = document.querySelectorAll(".btn-group .btn");
 let temas = ["padrao", "dark", "azul", "verde", "vermelho"]
 // elementos que são mudados pelo tema
 const body = document.querySelector("body");
-const titulo = document.querySelector("h4#titulo");
+const titulo = document.querySelector(".card h4");
 const botao_player = document.getElementById("configuracoes");
 const boto_modal = document.getElementById("save")
 

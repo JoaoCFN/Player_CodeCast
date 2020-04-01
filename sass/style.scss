@@ -81,11 +81,11 @@ a{
 @mixin tema ($nome_cor, $cor){
     
     .#{$nome_cor}-back{
-        background-color: $cor;
+        background-color: $cor !important;
         transition: 1s;
     }
     .#{$nome_cor}-texto{
-        color: $cor;
+        color: $cor !important;
         transition: 1s;
     }
 }
