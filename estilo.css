@@ -23,3 +23,7 @@ a {
   .player .card audio {
     width: 100%;
     background-color: #fff !important; }
+
+.muda-cor {
+  background-color: #000;
+  transition: 1s; }
