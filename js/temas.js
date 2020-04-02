@@ -79,8 +79,6 @@ function limpa_classe(tema){
 }
 
 muda_tema();
-
-
 /*
 botao.forEach(item => {
     item.addEventListener("click", () => {
