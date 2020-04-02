@@ -16,37 +16,36 @@
   <body class="">
     <div class="container">
       <section class="player">
+          <div class="card">
+              <h4 class="pt-3 pb-3" id="titulo"><i class="fa fa-podcast pr-1"></i>RocketCast</h4>
 
-              <div class="card">
-                  <h4 class="pt-3 pb-3" id="titulo"><i class="fa fa-podcast pr-1"></i>RocketCast</h4>
+              <img class= "imagem card-img-top">
+              </img>
+              
+              <div class="card-body texto">
+                <h5 class="card-title">Título</h5>
+                <p class="card-text pt-2">Artista</p>
+              </div>
+            
+              <audio controls class="audio mb-1">
+              </audio>
 
-                  <img class= "imagem card-img-top">
-                  </img>
-                  
-                  <div class="card-body texto">
-                    <h5 class="card-title">Título</h5>
-                    <p class="card-text pt-2">Artista</p>
-                  </div>
-                
-                  <audio controls class="audio mb-1">
-                  </audio>
+              <div class="config mb-3 mt-3">
+                <!-- botão do modal -->
+                <div class="btn-group" role="group" aria-label="controles">
+                  <button type="button" class="btn btn-player btn-lg" id="ant">
+                    <i class="fa fa-backward pr-2"></i>Previous
+                  </button>
 
-                  <div class="config mb-3 mt-3">
-                    <!-- botão do modal -->
-                    <div class="btn-group" role="group" aria-label="controles">
-                      <button type="button" class="btn btn-player btn-lg" id="ant">
-                        <i class="fa fa-backward pr-2"></i>Previous
-                      </button>
+                  <button type="button" class="btn btn-player btn-lg" data-toggle="modal" data-target="#configs" id="configuracoes">
+                    <i class="fa fa-cog pr-2"></i>Config
+                  </button>
 
-                      <button type="button" class="btn btn-player btn-lg" data-toggle="modal" data-target="#configs" id="configuracoes">
-                        <i class="fa fa-cog pr-2"></i>Config
-                      </button>
-
-                      <button type="button" class="btn btn-player btn-lg" id="prox">Next <i class="fa fa-forward pl-2"></i>
-                      </button>
-                    </div>
+                  <button type="button" class="btn btn-player btn-lg" id="prox">Next <i class="fa fa-forward pl-2"></i>
+                  </button>
                 </div>
-              </div> 
+            </div>
+          </div> 
       </section>
     </div>
     
