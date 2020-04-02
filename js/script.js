@@ -4,6 +4,8 @@ function player(){
     const titulo = document.querySelector("div .card-title");
     const artista = document.querySelector("div .card-text");
     const audio = document.querySelector("audio");
+    const proximo = document.getElementById("prox");
+    const anterior = document.getElementById("ant");
     // posição dos audios
     let i = 0;
 
@@ -30,6 +32,8 @@ function player(){
         }
     ];
 
+    let limite_audios = data.length - 1;
+
     // atualiza o player após um audio ser finalizado
     function atualiza_player(){
         // adicionar imagem
@@ -46,22 +50,39 @@ function player(){
     
     // quando o audio for finalizado ele passa para o próximo
     audio.addEventListener("ended", () => {
-        let limite_audios = data.length - 1;
         // se i for maior que o limite de audios, ou seja, tocar todos os audios, ele volta ao inicio
         if(i >= limite_audios){
             i = 0;
-            console.log(i)
-            console.log(limite_audios)
             atualiza_player()
             
         }
         // senao, ele segue para o próximo audio
         else{
             i += 1;
-            console.log(i)
-            console.log(limite_audios)
             atualiza_player()    
         }
+    })
+
+    // manipulação de próximo e anterior
+    proximo.addEventListener("click", () => {
+        if(i < limite_audios){
+            i += 1;  
+            atualiza_player()  
+        }
+        else{
+           window.alert("Fim da lista de audios") 
+        }
+              
+    })
+    anterior.addEventListener("click", () => {
+        if(i <= 0){
+            window.alert("Não tem áudio anterior");
+        }
+        else{
+            i -= 1;  
+            atualiza_player() 
+        }
+        
     })
 }
 

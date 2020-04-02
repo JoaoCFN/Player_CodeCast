@@ -31,11 +31,20 @@
                   <audio controls class="audio mb-1">
                   </audio>
 
-                  <div class="config mb-3">
+                  <div class="config mb-3 mt-3">
                     <!-- botão do modal -->
-                    <button type="button" class="btn btn-player btn-lg" data-toggle="modal" data-target="#configs" id="configuracoes">
-                      <i class="fa fa-cog pr-2"></i>Configurações
-                    </button>
+                    <div class="btn-group" role="group" aria-label="controles">
+                      <button type="button" class="btn btn-player btn-lg" id="ant">
+                        <i class="fa fa-backward pr-2"></i>Previous
+                      </button>
+
+                      <button type="button" class="btn btn-player btn-lg" data-toggle="modal" data-target="#configs" id="configuracoes">
+                        <i class="fa fa-cog pr-2"></i>Config
+                      </button>
+
+                      <button type="button" class="btn btn-player btn-lg" id="prox">Next <i class="fa fa-forward pl-2"></i>
+                      </button>
+                    </div>
                 </div>
               </div> 
       </section>
@@ -54,7 +63,7 @@
           <div class="modal-body">
             <div class="container-fluid">
               <h5>Temas: </h5>
-              <div class="btn-group" role="group" aria-label="Exemplo básico">
+              <div class="btn-group btn-temas" role="group" aria-label="Exemplo básico">
                 <button type="button" class="btn btn-player">Padrão</button>
                 <button type="button" class="btn btn-dark">Dark</button>
                 <button type="button" class="btn btn-azul">Blue</button>
@@ -64,8 +73,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-player" id="save">Save</button>
+            <button type="button" class="btn btn-player" id="save" data-dismiss="modal">Sair</button>
           </div>
         </div>
       </div>
