@@ -18,6 +18,7 @@ a{
     text-decoration: none;
 }
 
+
 .player{
     .card{
         margin: 0 auto;
@@ -34,8 +35,6 @@ a{
         .imagem{
             border-radius: 0 !important;           
             width: 100%;
-            //background: url("https://placehold.it/500") no-repeat center center / cover;
-            //height: 250px;
         }
 
         audio{
@@ -52,7 +51,11 @@ a{
         
     }  
 }
-
+.btn-temas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 // o mixin botao recebe o background, a cor do texto e o nome do botão e altera seu estilo
 @mixin botao ($back, $color, $botao){
     .btn-#{$botao}{
