@@ -1,7 +1,7 @@
 // pega o grupo de botões de tema
 let botao = document.querySelectorAll(".btn-temas .btn");
 // array de temas
-let temas = ["padrao", "dark", "azul", "verde", "vermelho"]
+let temas = ["padrao", "dark", "azul", "verde", "vermelho"];
 // elementos que são mudados pelo tema
 const body = document.querySelector("body");
 const titulo = document.querySelector(".card h4");
@@ -17,32 +17,32 @@ function muda_tema(){
         botao[item].addEventListener("click", () => {
             // limpa o estilo dos temas toda vez que ele for alterado
             for (i = 0; i < temas.length; i++){
-                limpa_classe(temas[i])
+                limpa_classe(temas[i]);
             }      
             // aplicação de tema
             switch(item){   
                 case 0:
-                    aplica_tema("padrao")           
+                    aplica_tema("padrao");       
                 break; 
 
                 case 1:
-                    aplica_tema("dark")
+                    aplica_tema("dark");
                 break;
 
                 case 2:
-                    aplica_tema("azul")
+                    aplica_tema("azul");
                 break;   
 
                 case 3:
-                    aplica_tema("verde")
+                    aplica_tema("verde");
                 break;
                 
                 case 4:
-                    aplica_tema("vermelho")
+                    aplica_tema("vermelho");
                 break;
 
                 default:
-                    console.log("sem item")
+                    console.log("sem item");
                 break;  
             }   
         })
@@ -51,9 +51,9 @@ function muda_tema(){
 function aplica_tema(tema){   
     // elementos que são alterados com a troca de tema
     // a variáveis tema é substituida e as classes são aplicadas ao css    
-    body.classList.add(`${tema}-back`)
-    titulo.classList.add(`${tema}-texto`)
-    botao_player.classList.add(`${tema}-back`)
+    body.classList.add(`${tema}-back`);
+    titulo.classList.add(`${tema}-texto`);
+    botao_player.classList.add(`${tema}-back`);
     botao_player.classList.add(`${tema}-bh`);
     boto_modal.classList.add(`${tema}-back`);
     boto_modal.classList.add(`${tema}-bh`); 
@@ -68,7 +68,7 @@ function limpa_classe(tema){
     // a variáveis tema é substituida e as classes são removidas do css   
     body.classList.remove(`${tema}-back`);
     titulo.classList.remove(`${tema}-texto`);
-    botao_player.classList.remove(`${tema}-back`)
+    botao_player.classList.remove(`${tema}-back`);
     botao_player.classList.remove(`${tema}-bh`);
     boto_modal.classList.remove(`${tema}-back`);
     boto_modal.classList.remove(`${tema}-bh`);  
@@ -79,10 +79,4 @@ function limpa_classe(tema){
 }
 
 muda_tema();
-/*
-botao.forEach(item => {
-    item.addEventListener("click", () => {
-        console.log(item.getAttribute("class"))    
-    })
-})
-*/
+

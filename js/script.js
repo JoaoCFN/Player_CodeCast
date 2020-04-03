@@ -53,13 +53,13 @@ function player(){
         // se i for maior que o limite de audios, ou seja, tocar todos os audios, ele volta ao inicio
         if(i >= limite_audios){
             i = 0;
-            atualiza_player()
+            atualiza_player();
             
         }
         // senao, ele segue para o próximo audio
         else{
             i += 1;
-            atualiza_player()    
+            atualiza_player();    
         }
     })
 
@@ -67,7 +67,7 @@ function player(){
     proximo.addEventListener("click", () => {
         if(i < limite_audios){
             i += 1;  
-            atualiza_player()  
+            atualiza_player();  
         }
         else{
            window.alert("Fim da lista de audios") 
@@ -80,61 +80,11 @@ function player(){
         }
         else{
             i -= 1;  
-            atualiza_player() 
+            atualiza_player(); 
         }
         
     })
 }
 
 // espera a página carregar para manipular o player
-window.addEventListener("load", player())
-
-
-
-/*
-const i = 2;
-
-const player = {
-    // elementos principais
-    img :  document.querySelector("img.imagem"),
-    titulo :  document.querySelector("div .card-title"),
-    artista :  document.querySelector("div .card-text"),
-    audio :  document.querySelector("audio"),
-      
-    // objeto inicial
-    data : [
-        {
-            titulo:
-            "Como começei a programar / Por que criamos a Rocketseat / Nossa Stack",
-            artista: "Diego Fernandes",
-            foto: "files/como-comecei.jpg",
-            arquivo: "files/como-comecei.mp3"   
-        },
-
-        {
-            titulo: "5 dicas para uma carreira sólida como programador",
-            artista: "Diego Fernandes",
-            foto: "files/5-dicas-para-uma-carreira-solida-como-programador.jpg",
-            arquivo: "files/5-dicas-para-uma-carreira-solida-como-programador.mp3"
-        },
-
-        {
-            titulo: "Júnior Pleno ou Sênior, qual a diferença?",
-            artista: "Diego Fernandes",
-            foto: "files/junior-pleno-ou-senior-qual-a-diferenca.jpg",
-            arquivo: "files/junior-pleno-ou-senior-qual-a-diferenca.mp3"
-        }
-    ],
-        
-    start(){
-        this.img.src = this.data[i].foto;
-        // adicionar texto
-        this.titulo.innerHTML = `${this.data[i].titulo}`;
-        player.artista.innerHTML = `<i class="fa fa-user pr-1"></i> ${this.data[i].artista}`;
-        this.audio.src = this.data[i].arquivo;
-    }
-
-
-};
-player.start();
-*/
+window.addEventListener("load", player());
