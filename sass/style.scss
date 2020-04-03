@@ -50,11 +50,13 @@ a{
         
     }  
 }
+
 .btn-temas{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 // o mixin botao recebe o background, a cor do texto e o nome do botão e altera seu estilo
 @mixin botao ($back, $color, $botao){
     .btn-#{$botao}{
