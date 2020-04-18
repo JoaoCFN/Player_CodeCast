@@ -1,21 +1,21 @@
-window.audios = [
+export default [
     {
-      title:
+        titulo:
         "Como começei a programar / Por que criamos a Rocketseat / Nossa Stack",
-      artist: "Diego Fernandes",
-      cover: "como-comecei.jpg",
-      file: "como-comecei.mp3"
+        artista: "Diego Fernandes",
+        foto: "files/como-comecei.jpg",
+        arquivo: "files/como-comecei.mp3"
     },
     {
-      title: "5 dicas para uma carreira sólida como programador",
-      artist: "Diego Fernandes",
-      cover: "5-dicas-para-uma-carreira-solida-como-programador.jpg",
-      file: "5-dicas-para-uma-carreira-solida-como-programador.mp3"
+        titulo: "5 dicas para uma carreira sólida como programador",
+        artista: "Diego Fernandes",
+        foto: "files/5-dicas-para-uma-carreira-solida-como-programador.jpg",
+        arquivo: "files/5-dicas-para-uma-carreira-solida-como-programador.mp3"
     },
     {
-      title: "Júnior Pleno ou Sênior, qual a diferença?",
-      artist: "Diego Fernandes",
-      cover: "junior-pleno-ou-senior-qual-a-diferenca.jpg",
-      file: "junior-pleno-ou-senior-qual-a-diferenca.mp3"
+        titulo: "Júnior Pleno ou Sênior, qual a diferença?",
+        artista: "Diego Fernandes",
+        foto: "files/junior-pleno-ou-senior-qual-a-diferenca.jpg",
+        arquivo: "files/junior-pleno-ou-senior-qual-a-diferenca.mp3"
     }
-  ];
+];

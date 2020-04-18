@@ -38,7 +38,6 @@ a{
 
         audio{
             width: 100%;
-            background-color: $white !important;
         }
 
         .config{
@@ -46,6 +45,16 @@ a{
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .start_controls{
+            font-size: 20px;
+            #play{
+                display: inline-block;
+            }
+            #pause{
+                display: none;
+            }
         }
         
     }  

@@ -1,3 +1,4 @@
+import data from "./data.js";
 function player(){
     // elementos principais
     const img = document.querySelector("img.imagem");
@@ -6,33 +7,31 @@ function player(){
     const audio = document.querySelector("audio");
     const proximo = document.getElementById("prox");
     const anterior = document.getElementById("ant");
+    const play = document.querySelector("#play");
+    const pause = document.querySelector("#pause");
+    const start_controls = document.querySelector("start_controls");
     // posição dos audios
     let i = 0;
-
-    // objeto inicial
-    const data = [
-        {
-            titulo:
-            "Como começei a programar / Por que criamos a Rocketseat / Nossa Stack",
-            artista: "Diego Fernandes",
-            foto: "files/como-comecei.jpg",
-            arquivo: "files/como-comecei.mp3"
-        },
-        {
-            titulo: "5 dicas para uma carreira sólida como programador",
-            artista: "Diego Fernandes",
-            foto: "files/5-dicas-para-uma-carreira-solida-como-programador.jpg",
-            arquivo: "files/5-dicas-para-uma-carreira-solida-como-programador.mp3"
-        },
-        {
-            titulo: "Júnior Pleno ou Sênior, qual a diferença?",
-            artista: "Diego Fernandes",
-            foto: "files/junior-pleno-ou-senior-qual-a-diferenca.jpg",
-            arquivo: "files/junior-pleno-ou-senior-qual-a-diferenca.mp3"
-        }
-    ];
-
+  
     let limite_audios = data.length - 1;
+
+    function play_audio(){
+        play.addEventListener("click", () => {
+             audio.play(); 
+             play.style.display = "none";  
+             pause.style.display = "inline-block";        
+        }) 
+    }
+    play_audio();
+
+    function pause_audio(){
+        pause.addEventListener("click", () => {
+            audio.pause();
+            play.style.display = "inline-block";
+            pause.style.display = "none";
+        })
+    }
+    pause_audio();
 
     // atualiza o player após um audio ser finalizado
     function atualiza_player(){
@@ -43,6 +42,10 @@ function player(){
         artista.innerHTML = `<i class="fa fa-user pr-1"></i> ${data[i].artista}`;
         // adicionar audio
         audio.src = data[i].arquivo;
+
+        // volta o play ao estado inicial
+        play.style.display = "inline-block";
+        pause.style.display = "none";
     }
 
     
