@@ -21,7 +21,7 @@
 
               <img class= "imagem card-img-top">
               </img>
-
+              
               <div class="card-body texto">
                 <h5 class="card-title">Título</h5>
                 <p class="card-text pt-2">Artista</p>
@@ -29,22 +29,35 @@
 
               <audio class="audio mb-1">
               </audio>
-
               <div class="col-sm-12">
-                <div class="row">
-
-                  <div class="col-sm-3 start_controls" align="center">
-                    <a id="play"><i class="fa fa-play"></i></a>
-                    <a id="pause"><i class="fa fa-pause"></i></a>   
-                  </div>
-
-                  <div class="col-sm-6"></div>
-
-                  <div class="col-sm-3"></div>
-
+              <div class="row">
+                <div class="col-sm-2 start_controls align-self-center" align="center">
+                  <a id="play"><i class="fa fa-play"></i></a>
+                  <a id="pause"><i class="fa fa-pause"></i></a>   
                 </div>
-              </div>
 
+                <div class="col-sm-8 middle_controls align-self-center" align="center">
+                  <div class="row">
+                    <div class="col-sm-3 align-self-center">
+                      <div id="tempo_atual">00:00</div>
+                    </div>
+                    <div class="col-sm-6 align-self-center pt-2">
+                      <input type="range" class="custom-range" id="barra_prog" min = "0" max="0" step="1" value="0">
+                    </div>
+                    <div class="col-sm-3 align-self-center" align="center">
+                      <div id="tempo_total">00:00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-sm-2 end_controls align-self-center">
+                  <a id="volume_up"><i class="fa fa-volume-up"></i></a>
+                  <a id="volume_off"><i class="fa fa-volume-off"></i></a>   
+                </div>
+                
+              </div>
+            </div>
+            
               <div class="config mb-3 mt-3">
                 <!-- botão do modal -->
                 <div class="btn-group" role="group" aria-label="controles">

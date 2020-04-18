@@ -46,13 +46,28 @@ a{
             align-items: center;
             justify-content: center;
         }
-
+        
         .start_controls{
             font-size: 20px;
+            
             #play{
                 display: inline-block;
             }
             #pause{
+                display: none;
+            }
+        }
+        .midlle_controls{
+            .custom-range{
+                color: $padrao !important;
+            }
+        }
+        .end_controls{
+            font-size: 23px;
+            #volume_up{
+                display: inline-block;
+            }
+            #volume_off{
                 display: none;
             }
         }

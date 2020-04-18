@@ -9,29 +9,13 @@ function player(){
     const anterior = document.getElementById("ant");
     const play = document.querySelector("#play");
     const pause = document.querySelector("#pause");
-    const start_controls = document.querySelector("start_controls");
+    const volume_up = document.querySelector("#volume_up");
+    const volume_off = document.querySelector("#volume_off");
+    const barra_prog = document.querySelector("#barra_prog");
     // posição dos audios
     let i = 0;
   
     let limite_audios = data.length - 1;
-
-    function play_audio(){
-        play.addEventListener("click", () => {
-             audio.play(); 
-             play.style.display = "none";  
-             pause.style.display = "inline-block";        
-        }) 
-    }
-    play_audio();
-
-    function pause_audio(){
-        pause.addEventListener("click", () => {
-            audio.pause();
-            play.style.display = "inline-block";
-            pause.style.display = "none";
-        })
-    }
-    pause_audio();
 
     // atualiza o player após um audio ser finalizado
     function atualiza_player(){
@@ -46,10 +30,41 @@ function player(){
         // volta o play ao estado inicial
         play.style.display = "inline-block";
         pause.style.display = "none";
+        volume_up.style.display = "inline-block";
+        volume_off.style.display = "none";
     }
+ 
+    atualiza_player();
 
     
-    atualiza_player()
+    play.addEventListener("click", () => {
+        audio.play(); 
+        play.style.display = "none";  
+        pause.style.display = "inline-block";        
+    }) 
+    
+    pause.addEventListener("click", () => {
+        audio.pause();
+        play.style.display = "inline-block";
+        pause.style.display = "none";
+    })
+
+    volume_up.addEventListener("click", () => {
+        // sempre inverte o estado 
+        audio.muted = !audio.muted;
+        volume_up.style.display = "none";
+        volume_off.style.display = "inline-block";
+    })
+
+    volume_off.addEventListener("click", () => {
+        // sempre inverte o estado 
+        audio.muted = !audio.muted;
+        volume_up.style.display = "inline-block";
+        volume_off.style.display = "none";
+    })
+    
+    
+
     
     // quando o audio for finalizado ele passa para o próximo
     audio.addEventListener("ended", () => {
