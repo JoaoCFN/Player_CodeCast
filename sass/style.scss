@@ -58,8 +58,23 @@ a{
                 padding: 1rem;
             }
 
-            button{
-                background-color: $black !important;
+            input{
+                &::-webkit-slider-thumb{            
+                    background-color: $black; 
+                    box-shadow: none;   
+                }
+                &::-moz-range-thumb{
+                    background-color: $black; 
+                    box-shadow: none; 
+                }
+                &::-o-range-thumb{
+                    background-color: $black; 
+                    box-shadow: none; 
+                }
+                &::-ms-thumb{
+                    background-color: $black; 
+                    box-shadow: none; 
+                }
             }
 
         }
