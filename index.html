@@ -31,12 +31,8 @@
               </audio>
               <div class="col-sm-12">
               <div class="row">
-                <div class="col-sm-2 start_controls align-self-center" align="center">
-                  <a id="play"><i class="fa fa-play"></i></a>
-                  <a id="pause"><i class="fa fa-pause"></i></a>   
-                </div>
-
-                <div class="col-sm-8 middle_controls align-self-center" align="center">
+              
+                <div class="col-sm-10 middle_controls align-self-center" align="center">
                   <div class="row">
                     <div class="col-sm-3 align-self-center">
                       <div id="tempo_atual">00:00</div>
@@ -58,18 +54,23 @@
               </div>
             </div>
             
-              <div class="config mb-3 mt-3">
+              <div class="config mb-3 mt-3 controls">
                 <!-- botão do modal -->
                 <div class="btn-group" role="group" aria-label="controles">
                   <button type="button" class="btn btn-player" id="ant">
-                    <i class="fa fa-backward pr-2"></i>Previous
+                    <i class="fa fa-backward pr-2"></i>
+                  </button>
+
+                  <button type="button" class="btn btn-player">
+                    <a id="play"><i class="fa fa-play"></i></a>
+                    <a id="pause"><i class="fa fa-pause"></i></a>                     
+                  </button>
+
+                  <button type="button" class="btn btn-player" id="prox"> <i class="fa fa-forward pl-2"></i>
                   </button>
 
                   <button type="button" class="btn btn-player" data-toggle="modal" data-target="#configs" id="configuracoes">
-                    <i class="fa fa-cog pr-2"></i>Configurações
-                  </button>
-
-                  <button type="button" class="btn btn-player" id="prox">Next <i class="fa fa-forward pl-2"></i>
+                    <i class="fa fa-cog"></i>
                   </button>
                 </div>
             </div>
