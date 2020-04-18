@@ -63,9 +63,7 @@ function player(){
         volume_off.style.display = "none";
     })
     
-    
 
-    
     // quando o audio for finalizado ele passa para o próximo
     audio.addEventListener("ended", () => {
         // se i for maior que o limite de audios, ou seja, tocar todos os audios, ele volta ao inicio

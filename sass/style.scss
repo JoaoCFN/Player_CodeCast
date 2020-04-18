@@ -47,37 +47,43 @@ a{
             justify-content: center;
         }
         
+        .timer {
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            background-color: $white;
+           
+            & > div{
+                color: $black; 
+                text-align: center;  
+                padding: 1rem;
+            }
+
+            button{
+                background-color: $black !important;
+            }
+
+        }
+        
         .controls{
             i{
-                font-size: 20px;
+                font-size: 22px;
             }
     
             #play{
-                display: inline-block;
-
-                
+                display: inline-block; 
             }
+
             #pause{
-                display: none;
+                display: none;   
+            }
 
-                
-            }
-        }
-        .midlle_controls{
-            .custom-range{
-                color: $padrao !important;
-            }
-        }
-        .end_controls{
-            font-size: 23px;
             #volume_up{
                 display: inline-block;
             }
             #volume_off{
                 display: none;
             }
-        }
-        
+        }       
     }  
 }
 
@@ -92,6 +98,7 @@ a{
     .btn-#{$botao}{
         background-color: $back;
         color: $color;
+        box-shadow: none !important;
     }
     .btn-#{$botao}:hover{
         color: $back;

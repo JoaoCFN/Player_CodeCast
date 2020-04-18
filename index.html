@@ -29,10 +29,8 @@
 
               <audio class="audio mb-1">
               </audio>
-              <div class="col-sm-12">
-              <div class="row">
-              
-                <div class="col-sm-10 middle_controls align-self-center" align="center">
+              <!-- <div class="col-sm-12">
+                <div class="middle_controls align-self-center" align="center">
                   <div class="row">
                     <div class="col-sm-3 align-self-center">
                       <div id="tempo_atual">00:00</div>
@@ -45,23 +43,32 @@
                     </div>
                   </div>
                 </div>
+            </div> -->
 
-                <div class="col-sm-2 end_controls align-self-center">
-                  <a id="volume_up"><i class="fa fa-volume-up"></i></a>
-                  <a id="volume_off"><i class="fa fa-volume-off"></i></a>   
-                </div>
-                
-              </div>
-            </div>
             
-              <div class="config mb-3 mt-3 controls">
-                <!-- botão do modal -->
+              <div class="timer">
+                <div class="tempo_inicial">00:00</div>
+
+                <div class="tempo_atual"> 
+                  <input type="range" class="custom-range" id="barra_prog" min = "0" max="100" step="1" value="0">                
+                </div>
+
+                <div class="tempo_total">00:00</div>
+              </div>
+              
+
+              <div class="config mb-3 mt-3 controls">             
                 <div class="btn-group" role="group" aria-label="controles">
+                  <button type="button" class="btn btn-player" id="volume">
+                      <a id="volume_up"><i class="fa fa-volume-up"></i></a>
+                      <a id="volume_off"><i class="fa fa-volume-off"></i></a>   
+                  </button>
+
                   <button type="button" class="btn btn-player" id="ant">
                     <i class="fa fa-backward pr-2"></i>
                   </button>
 
-                  <button type="button" class="btn btn-player">
+                  <button type="button" class="btn btn-player" id="start">
                     <a id="play"><i class="fa fa-play"></i></a>
                     <a id="pause"><i class="fa fa-pause"></i></a>                     
                   </button>
@@ -69,6 +76,7 @@
                   <button type="button" class="btn btn-player" id="prox"> <i class="fa fa-forward pl-2"></i>
                   </button>
 
+                  <!-- botão do modal -->
                   <button type="button" class="btn btn-player" data-toggle="modal" data-target="#configs" id="configuracoes">
                     <i class="fa fa-cog"></i>
                   </button>
