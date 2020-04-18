@@ -92,12 +92,14 @@ a{
     .#{$nome_cor}-texto{
         color: $cor !important;
         transition: 1s;
+
     }
     // btn hover
     .#{$nome_cor}-bh:hover{
         background-color: transparent !important;
         color: $cor;
         transition: 1s;
+        border-color: $cor;
     }
 }
 // tema padrão
