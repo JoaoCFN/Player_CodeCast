@@ -25,6 +25,10 @@ a{
         max-width: 90%;
         box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
 
+        // estado inicial da animação
+        opacity: 0;
+        transform: translate3d(0, -200px, 0);
+
         #titulo{
             background-color: $white;
             text-align: center;
@@ -99,13 +103,23 @@ a{
             }
         }       
     }  
+    // animação que o elemento vem de cima e retorna para sua posição original
+    .anima_cima{
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+        transition: 1s;
+    } 
 }
+
+
 
 .btn-temas{
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
 
 // o mixin botao recebe o background, a cor do texto e o nome do botão e altera seu estilo
 @mixin botao ($back, $color, $botao){
