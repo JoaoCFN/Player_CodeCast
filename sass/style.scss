@@ -27,7 +27,7 @@ a{
 
         // estado inicial da animação
         opacity: 0;
-        transform: translate3d(-150px, 0, 0);
+        transform: translate3d(0, -150px, 0);
 
         #titulo{
             background-color: $white;
