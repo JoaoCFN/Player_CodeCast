@@ -1,4 +1,6 @@
+// base de podcasts
 import data from "./data.js";
+
 function player(){
     // elementos principais
     const img = document.querySelector("img.imagem");
@@ -14,6 +16,8 @@ function player(){
     const barra_prog = document.querySelector("#barra_prog");
     const tempo_inicial = document.querySelector(".tempo_inicial");
     const tempo_total = document.querySelector(".tempo_total");
+    let msg_danger= document.querySelector("#msg_danger");
+    
     // posição dos audios
     let i = 0;
   
@@ -64,6 +68,12 @@ function player(){
 
     function progresso(value){
         audio.currentTime = value;               
+    }
+
+    function limpa_msg_warning(){
+        // limpar mensagens de aviso ao usuário
+        msg_danger.innerHTML = ``;
+        msg_danger.removeAttribute("class", "alert alert-danger");     
     }
 
     play.addEventListener("click", () => {
@@ -122,14 +132,22 @@ function player(){
             atualiza_player();  
         }
         else{
-           window.alert("Fim da lista de audios") 
+            //window.alert("Fim da lista de audios") 
+            msg_danger.setAttribute("class", "alert alert-danger");
+            msg_danger.innerHTML = `Fim da Playlist`;
+
+            setTimeout(limpa_msg_warning, 3000)
         }
               
     })
 
     anterior.addEventListener("click", () => {
         if(i <= 0){
-            window.alert("Não tem áudio anterior");
+            // window.alert("Não tem áudio anterior");
+            msg_danger.setAttribute("class", "alert alert-danger");
+            msg_danger.innerHTML = `Você está no início da playlist`;
+
+            setTimeout(limpa_msg_warning, 3000)
         }
         else{
             i -= 1;  
