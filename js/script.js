@@ -12,11 +12,13 @@ function player(){
     const volume_up = document.querySelector("#volume_up");
     const volume_off = document.querySelector("#volume_off");
     const barra_prog = document.querySelector("#barra_prog");
+    const tempo_inicial = document.querySelector(".tempo_inicial");
+    const tempo_total = document.querySelector(".tempo_total");
     // posição dos audios
     let i = 0;
   
     let limite_audios = data.length - 1;
-
+    
     // atualiza o player após um audio ser finalizado
     function atualiza_player(){
         // adicionar imagem
@@ -26,25 +28,53 @@ function player(){
         artista.innerHTML = `<i class="fa fa-user pr-1"></i> ${data[i].artista}`;
         // adicionar audio
         audio.src = data[i].arquivo;
-
+        // setar audio para o inicio
+        barra_prog.value = 0;
+   
+        // ele roda essa função somente quando ele lê os dados do audio
+        audio.onloadeddata = () => {
+            let audio_total = secondsToMinutos(audio.duration);
+            // adiciona a duração total do audio ao player
+            barra_prog.max =  audio.duration;
+            tempo_total.innerHTML =  audio_total;
+        }
         // volta o play ao estado inicial
         play.style.display = "inline-block";
         pause.style.display = "none";
         volume_up.style.display = "inline-block";
         volume_off.style.display = "none";
+
     }
  
     atualiza_player();
 
-    
+    function secondsToMinutos(tempo){
+        let minutos = Math.floor(tempo / 60);
+        let segundos =  Math.floor(tempo % 60);
+        // o slice com número negativo pega os caracteres da direita para esquerda
+        // nesse exemplo, ele pega os dois últimos números das strings
+        return `${("0" + minutos).slice(-2)}:${("0" + segundos).slice(-2)}`
+    }
+
+    function atualiza_tempo(){
+        // current time é o tempo atual
+        tempo_inicial.innerHTML = secondsToMinutos(audio.currentTime); 
+        barra_prog.value = audio.currentTime;  
+    }
+
+    function progresso(value){
+        audio.currentTime = value;               
+    }
+
     play.addEventListener("click", () => {
-        audio.play(); 
+        audio.play();            
         play.style.display = "none";  
-        pause.style.display = "inline-block";        
+        pause.style.display = "inline-block"; 
+         
     }) 
     
     pause.addEventListener("click", () => {
-        audio.pause();
+        audio.pause();   
         play.style.display = "inline-block";
         pause.style.display = "none";
     })
@@ -63,6 +93,12 @@ function player(){
         volume_off.style.display = "none";
     })
     
+    // quando a barrinha do input for alterado ele realiza a func progresso
+    barra_prog.oninput = () => progresso(barra_prog.value);
+    barra_prog.onchange = () => progresso(barra_prog.value);
+    // executa algo sempre que o audio for atualizado
+    audio.ontimeupdate = () => atualiza_tempo(); 
+
 
     // quando o audio for finalizado ele passa para o próximo
     audio.addEventListener("ended", () => {
@@ -90,6 +126,7 @@ function player(){
         }
               
     })
+
     anterior.addEventListener("click", () => {
         if(i <= 0){
             window.alert("Não tem áudio anterior");
