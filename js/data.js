@@ -17,5 +17,17 @@ export default [
         artista: "Diego Fernandes",
         foto: "files/junior-pleno-ou-senior-qual-a-diferenca.jpg",
         arquivo: "files/junior-pleno-ou-senior-qual-a-diferenca.mp3"
+    },
+    {
+        titulo: "Como Começar Do Zero No Mercado Web | Podcast Papo Web #01",
+        artista: "Robson Leite",
+        foto: "files/como-comecar-zero-upinside.png",
+        arquivo: "files/como-comecar-zero-upinside.mp3"
+    },
+    {
+        titulo: "PodProgramar #17 – Início de carreira",
+        artista: "Jessica Zanelato e Ana Eliza",
+        foto: "files/inicio-carreira-podprogramar.png",
+        arquivo: "files/inicio-carreira-podprogramar.mp3"
     }
 ];

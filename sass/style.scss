@@ -103,7 +103,7 @@ a{
             }
         }       
     }  
-    // animação que o elemento vem de cima e retorna para sua posição original
+    // animação: o elemento vem de cima e retorna para sua posição original
     .anima_cima{
         opacity: 1;
         transform: translate3d(0, 0, 0);
@@ -111,15 +111,11 @@ a{
     } 
 }
 
-
-
 .btn-temas{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-
 
 // o mixin botao recebe o background, a cor do texto e o nome do botão e altera seu estilo
 @mixin botao ($back, $color, $botao){
