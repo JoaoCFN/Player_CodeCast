@@ -18,7 +18,7 @@ function player(){
     const barra_prog = document.querySelector("#barra_prog");
     const tempo_inicial = document.querySelector(".tempo_inicial");
     const tempo_total = document.querySelector(".tempo_total");
-    let msg_danger= document.querySelector("#msg_danger");
+    let msg_danger = document.querySelector("#msg_danger");
 
     // posição dos audios
     let i = 0;
@@ -71,10 +71,6 @@ function player(){
         barra_prog.value = audio.currentTime;  
     }
 
-    function progresso(value){
-        audio.currentTime = value;               
-    }
-
     function limpa_msg_warning(){
         // limpar mensagens de aviso ao usuário
         msg_danger.innerHTML = ``;
@@ -92,6 +88,8 @@ function player(){
         pause.style.display = `${estado_icone_2}`;
         botao_seq.setAttribute("id", estado_seq);   
     }
+
+    const progresso = value => audio.currentTime = value;
 
     botao_seq.addEventListener("click", () => {
         /* 
@@ -117,12 +115,9 @@ function player(){
         */
         let id = botao_volume.getAttribute("id");
 
-        if(id == "volume_1"){
-            altera_vol("none", "inline-block", "volume_0");
-        }
-        else if(id == "volume_0"){
-            altera_vol("inline-block", "none", "volume_1");
-        }
+        if(id == "volume_1") altera_vol("none", "inline-block", "volume_0");
+        
+        else if(id == "volume_0") altera_vol("inline-block", "none", "volume_1");
     })
     
 
@@ -151,7 +146,6 @@ function player(){
             //window.alert("Fim da lista de audios") 
             msg_danger.setAttribute("class", "alert alert-danger");
             msg_danger.innerHTML = `Fim da Playlist`;
-
             setTimeout(limpa_msg_warning, 3000)
         }
               
@@ -162,7 +156,6 @@ function player(){
             // window.alert("Não tem áudio anterior");
             msg_danger.setAttribute("class", "alert alert-danger");
             msg_danger.innerHTML = `Você está no início da playlist`;
-
             setTimeout(limpa_msg_warning, 3000)
         }
         else{
