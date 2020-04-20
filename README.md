@@ -1,4 +1,7 @@
 # CodeCast
+
+![print_projeto](files/print_projeto.png?raw=true "print da homepage do player")
+
 O CodeCast é um modesto player de audio para podcasts feito para treinar minhas skills em HTML, CSS, SASS e JavaScript.
 
 O player foi alimentado com 5 aúdios iniciais:
