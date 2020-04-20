@@ -109,6 +109,9 @@ a{
         transform: translate3d(0, 0, 0);
         transition: 1s;
     } 
+    .btn-group{
+        width: 90%;
+    }
 }
 
 .btn-temas{
@@ -173,6 +176,7 @@ a{
 @include tema(verde, $verde);
 // tema vermelha
 @include tema(vermelho, $vermelho);
+
 
 
 

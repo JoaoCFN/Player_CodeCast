@@ -1,5 +1,5 @@
 # CodeCast
-O CodeCast é um modesto player de audio para podcasts de programação feito para treinar minhas skills em HTML, CSS, SASS e JavaScript.
+O CodeCast é um modesto player de audio para podcasts feito para treinar minhas skills em HTML, CSS, SASS e JavaScript.
 
 O player foi alimentado com 5 aúdios iniciais:
 1. Fala Dev #1 - Diego Fernandes - Rocketseat
