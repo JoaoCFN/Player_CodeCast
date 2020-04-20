@@ -5,12 +5,12 @@ let temas = ["padrao", "dark", "azul", "verde", "vermelho"];
 // elementos que são mudados pelo tema
 const body = document.querySelector("body");
 const titulo = document.querySelector(".card h4");
-const botao_start = document.getElementById("start");
+const botao_seq = document.getElementById("seq_0");
 const botao_config = document.getElementById("configuracoes");
 const boto_modal = document.getElementById("save");
 const proximo = document.getElementById("prox");
 const anterior = document.getElementById("ant");
-const volume = document.getElementById("volume");
+const volume = document.getElementById("volume_1");
 
 
 function muda_tema(){
@@ -52,8 +52,8 @@ function aplica_tema(tema){
     // a variáveis tema é substituida e as classes são aplicadas ao css    
     body.classList.add(`${tema}-back`);
     titulo.classList.add(`${tema}-texto`);
-    botao_start.classList.add(`${tema}-back`);
-    botao_start.classList.add(`${tema}-bh`);
+    botao_seq.classList.add(`${tema}-back`);
+    botao_seq.classList.add(`${tema}-bh`);
     botao_config.classList.add(`${tema}-back`);
     botao_config.classList.add(`${tema}-bh`);
     boto_modal.classList.add(`${tema}-back`);
@@ -71,8 +71,8 @@ function limpa_classe(tema){
     // a variáveis tema é substituida e as classes são removidas do css   
     body.classList.remove(`${tema}-back`);
     titulo.classList.remove(`${tema}-texto`);
-    botao_start.classList.remove(`${tema}-back`);
-    botao_start.classList.remove(`${tema}-bh`);
+    botao_seq.classList.remove(`${tema}-back`);
+    botao_seq.classList.remove(`${tema}-bh`);
     botao_config.classList.remove(`${tema}-back`);
     botao_config.classList.remove(`${tema}-bh`);
     boto_modal.classList.remove(`${tema}-back`);
